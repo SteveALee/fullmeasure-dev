@@ -32,7 +32,7 @@ function removegamepad({gamepad}) {
 <svelte:window on:gamepadconnected={addgamepad} 
                on:gamepaddisconnected={removegamepad} />
 
-<p>Press a gamepad button to get started. See the browser console for add/remove events.</p>
+<p>Connect a Gamepad and press a button or waggle a joystick to get started. See the browser console for add/remove events.</p>
 
 {#each $gamepads as gamepad, i (i)}
   {#if gamepad !== null}
