@@ -1,22 +1,10 @@
 ---
 import GamepadAPI from '../components/GamepadAPI.svelte';		
+import BaseLayout from '../layouts/BaseLayout.astro';		
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Fullmeasure.dev</title>
-		<style>
-		</style>
-	</head>
-	<body>
-		<main>
-			<h1>The Browser Gamepad API</h1>
-
+<BaseLayout title="The Browser Gamepad API">
 	<p>An app to explore the experimental browser <a href="https://w3c.github.io/gamepad/">Gamepad API</a>
 	 and based on <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API">code from Mozilla on MDN</a></p>
-			<GamepadAPI client:load />
-		</main>
-	</body>
-</html>
+
+	<GamepadAPI client:load />
+</BaseLayout>
