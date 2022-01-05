@@ -1,5 +1,8 @@
 ---
+import {basename} from "path"
 const {title} = Astro.props;
+const isThisPath = (path) => path === `/${basename(Astro.request.url.pathname)}`
+const navItem = (path, name) => (isThisPath(path)) ? `<span class="current-nav-item">${name}</span>` : `<a class="nav-item" href="${path}">${name}</a>`
 ---
 <html lang="en">
 	<head>
@@ -13,8 +16,8 @@ const {title} = Astro.props;
 	<body>
     <!-- Adds a navigation bar to every page. -->
     <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
+      { navItem("/", "Home") }
+      { navItem("/about", "About") }
     </nav>
     <main>
     <h1>{title}</h1>
